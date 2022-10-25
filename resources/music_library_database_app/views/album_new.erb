@@ -1,0 +1,21 @@
+<html>
+  <head></head>
+  <body>
+    <h1>Available Artists:</h1>
+      <% @artists.each do |artist| %>
+      <div>
+        <%= artist.id %> - <%= artist.name %> - <%= artist.genre%>
+      </div>
+      <% end%>
+
+    <h1>Add a new album</h1>
+
+    <form action="/submit" method="POST">
+      Album title: <input type="text" name="title"><br><br>
+      Year of release: <input type="text" name="release_year"><br><br>
+      Artist ID number: <input type="text" name="artist_id"><br><br>
+
+      <input type="submit" value="Submit the form">
+    </form>
+  </body>
+</html>

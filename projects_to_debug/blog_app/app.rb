@@ -15,13 +15,13 @@ class Application < Sinatra::Base
   end
 
   get '/' do
-    posts = @post_manager.all_posts
+    @posts = @post_manager.all_posts
 
     return erb(:index)
   end
 
   # get posts for a given tag
-  post '/tag/:tag' do
+  get '/tag/:tag' do
     @posts = @post_manager.all_posts_by_tag(params[:tag])
 
     return erb(:index)
@@ -29,7 +29,7 @@ class Application < Sinatra::Base
 
   # create new post
   post '/posts' do
-    new_post = Post.new(params[:the_title], params[:content], params[:tags].split(','))
+    new_post = Post.new(params[:title], params[:content], params[:tags].split(','))
     @post_manager.add_post(new_post)
 
     return redirect('/')

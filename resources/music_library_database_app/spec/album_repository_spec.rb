@@ -50,10 +50,8 @@ describe AlbumRepository do
 
   it 'deletes an album' do
     repo = AlbumRepository.new
-
     repo.delete(1)
     albums = repo.all
-
     expect(albums.length).to eq(11)
     expect(albums.first.id).to eq(2)
   end
