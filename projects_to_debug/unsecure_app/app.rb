@@ -12,7 +12,9 @@ class Application < Sinatra::Base
 
   post '/hello' do
     @name = params[:name]
-
+    if @name.include?('<script>') || @name.include?('</script>')
+      return erb(:hacker)
+    end
     return erb(:hello)
   end
 end

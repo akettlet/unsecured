@@ -27,5 +27,12 @@ describe Application do
       expect(response.status).to eq(200)
       expect(response.body).to include('Hi Aurora!')
     end
+
+    it 'should get greeting message' do
+      response = post('/hello', name: '<script>window.alert("You have been p0wn3d!!!!")</script>')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('hacking scumbag!')
+    end
   end
 end
