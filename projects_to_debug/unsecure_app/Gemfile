@@ -7,3 +7,5 @@ gem 'selenium-webdriver'
 gem 'webrick'
 gem 'sinatra-contrib'
 gem "rackup", "~> 0.1.0"
+
+gem "rack-test", "~> 1.1"

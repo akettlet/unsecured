@@ -81,6 +81,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  rack-test (~> 1.1)
   rackup (~> 0.1.0)
   rspec
   selenium-webdriver
